@@ -1,0 +1,236 @@
+html, body {
+    margin: 0;
+    padding: 0;
+
+    background: #000;
+
+    font-family: sans-serif;
+}
+h1 {
+    position: absolute;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: white;
+    font-family: 'arial';
+    text-align: center;
+    margin-top: 50px;
+    font-size: .85em;
+    font-weight: lighter;
+    text-transform: uppercase;
+    letter-spacing: 10px;
+    animation: secp 10s infinite;
+}
+.start-btn {
+    position: absolute;
+    top: 80vh;
+    left: 50%;
+    transform: translateX(-50%);
+    color: white;
+    font-family: 'arial';
+    text-align: center;
+    margin-top: 50px;
+    font-size: .85em;
+    font-weight: lighter;
+    text-transform: uppercase;
+    letter-spacing: 10px;
+    cursor: pointer;
+    animation: thirdp 2s infinite;
+}
+.home-container {
+    position: absolute;
+    /* top: 39%;
+    left: 50%;
+    transform: translate(-50%, -50%); */
+    /* height: 300vh; */
+    width: 100%;
+}
+
+.main-heading {
+    color: white;
+    text-transform: uppercase;
+}
+
+.main-heading-primary {
+    display: block;
+    font-size: 5.0rem;
+    font-weight: 400;
+    letter-spacing: 35px;
+    margin-left: 35px;
+    animation: moveInLeft 1s ease-out;
+}
+
+.main-heading-secondary {
+    color: #ff69b4;
+    font-family: sans-serif;
+    display: block;
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-align: center;
+    letter-spacing: 31px;
+    margin-left: 30px;
+    animation: moveInRight 1s ease-out;
+}
+
+.bloc {
+    position: absolute;
+    z-index: 10;
+    height: 200px;
+    width: 400px;
+    left: 0;
+    top: 800px;
+    background: lightcyan;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.start-btn:before, .underline-btn:after {
+    content: '';
+    display: block;
+    position: absolute;
+    height: 1px;
+    width: 0;
+}
+.start-btn:before {
+    transition: width 0s ease,background .4s ease;
+    left: -5px;
+    bottom: -3px;
+}
+.start-btn:after {
+    left: -5px;
+    bottom: -3px;
+    background: #fff;
+    transition: width .4s ease;
+}
+.start-btn:hover:before {
+    width: 97.8%;
+    background: #fff;
+    transition: width .4s ease;
+}
+.start-btn:hover:after {
+    width: 97.8%;
+    background: 0 0;
+    transition: all 0s ease;
+}
+.ready-anim, .load-btn {
+    position: absolute;
+    z-index: 10;
+    bottom: -100%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #ff69b4;
+    height: 40px;
+    padding: 0 0 0 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    text-transform: uppercase;
+    letter-spacing: 10px;
+    opacity: 0;
+}
+.load-btn {
+    color: #777;
+    opacity: 1;
+    font-size: 13px;
+}
+.load-btn span {
+    color: #ff69b4;
+}
+.load-btn span:nth-child(1){
+         animation: firstp 1s ease-out infinite;
+ }
+.load-btn span:nth-child(2){
+         animation: secp 1s ease-out infinite;
+ }
+.load-btn span:nth-child(3){
+         animation: thirdp 1s ease-out infinite;
+ }
+.play-ready {
+    animation: readyToPlay .3s ease-out forwards;
+}
+.warning {
+    position: absolute;
+    left: 10px;
+    bottom: 10px;
+    display: flex;
+    color: #fff;
+}
+.warning img {
+    margin-right: 4px;
+    height: 22px;
+}
+.warning p {
+    margin: 9px 0 0 0;
+    text-transform: uppercase;
+    font-size: 10px;
+}
+.warning p span {
+    animation: glitch .25s ease-out infinite;
+}
+.remove {
+    animation: remove 1s ease-out forwards;
+}
+
+@keyframes remove {
+    from {opacity: 1;}
+    to {opacity: 0;}
+}
+@keyframes firstp {
+    0% {opacity: 1;}
+    33% {opacity: 0;}
+    66% {opacity: 0;}
+    100% {opacity: 0;}
+}@keyframes secp {
+     0% {opacity: 0;}
+     5% {opacity: 0;}
+     10% {opacity: 0;}
+     15% {opacity: 0;}
+     20% {opacity: 0;}
+     25% {opacity: 0;}
+     30% {opacity: 0;}
+     40% {opacity: 1;}
+     45% {opacity: 1;}
+     50% {opacity: 1;}
+     55% {opacity: 1;}
+     60% {opacity: 1;}
+     65% {opacity: 0;}
+     70% {opacity: 0;}
+     75% {opacity: 0;}
+     80% {opacity: 0;}
+     85% {opacity: 0;}
+     90% {opacity: 0;}
+     95% {opacity: 0;}
+     100% {opacity: 0;}
+ }@keyframes thirdp {
+      0% {opacity: 0;}
+      30% {opacity: 1;}
+      70% {opacity: 1;}
+      100% {opacity: 0;}
+  }
+@keyframes readyToPlay {
+    0% { opacity: 0;}
+    50% { opacity: 1;}
+    99% { opacity: 0; font-size: 30px}
+    100% {font-size: 0px}
+}
+
+@keyframes moveInLeft {
+    0% {opacity: 0;transform: translateX(-100px);}
+    80% {transform: translateX(10px);}
+    100% {opacity: 1;transform: translate(0);}
+}
+
+@keyframes moveInRight {
+    0% {opacity: 0;transform: translateX(100px);}
+    80% {transform: translateX(-10px);}
+    100% {opacity: 1;transform: translate(0);}
+}
+@keyframes glitch {
+    0% {  text-shadow: 1px -1px magenta,-1px -1px cyan,0 -0.3px yellow;}
+    25% {  text-shadow: 1.3px 1px magenta,-0.4px 0.2px cyan,0 0.7px yellow;}
+    50% {  text-shadow: -0.8px -0.8px magenta,1px 1px cyan,0 0px yellow;}
+    75% {  text-shadow: 0.4px 1.4px magenta,-1.2px 0px cyan,0 0.4px yellow;}
+    100% {  text-shadow: -0.3px -1px magenta,0.7px -0.4px cyan,0 -0.6px yellow;}
+}
